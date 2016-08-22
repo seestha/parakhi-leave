@@ -17,46 +17,31 @@
 				<input type="checkbox">Property3</input><br>
 			</div>
 		</div> <!-- end of property-div -->
-		<div class="absence-record1"> 
+		<div class="absence-record1">
 			<label>absence record 1</label>
 		</div> <!-- end of absence-record1 -->
-		<div class="absence-record2"> 
+		<div class="absence-record2">
 			<label>absence record 2</label>
 		</div> <!-- end of absence-record2 -->
-		<div class="absence-record3"> 
+		<div class="absence-record3">
 			<label>absence record 3</label>
 		</div> <!-- end of absence-record3 -->
 	</div> <!-- end of outer-div -->
 
 
 
-<!-- <h1>Sorted Table</h1>
-<button id="sorting">Sort Table</button>
-<div id="here_table"></div>
+<button id="sorting">Sort List</button>
+<div id="list"></div>
 
 	<script type="text/javascript">
-		let names=["Roji", "Saru", "Aarati", "Jeevan"];
+		var names=["Roji", "Saru", "Aarati", "Jeevan"];
 		$(document).ready(function() {
-			// names.sort();
-			var table = $('<table></table>').addClass('foo');
-			for(i=0; i<names.length; i++){
-			    var row = $('<tr></tr>').text(names[i]);
-			    table.append(row);
-			}
-
-			$('#here_table').append(table);
-
+			$('#list').text(names);
 		});
 		$('#sorting').click(function() {
 			names.sort();
-			var table = $('<table></table>').addClass('foo');
-			for(i=0; i<names.length; i++){
-			    var row = $('<tr></tr>').text(names[i]);
-			    table.append(row);
-			}
-
-			$('#here_table').append(table);
+			$('#list').text(names);
 		});
-	</script> -->
+	</script>
 </body>
 </html>
