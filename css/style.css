@@ -1,0 +1,48 @@
+body{
+	font-size: 18px;
+}
+
+
+.outer-div{
+	border: 1px solid red;
+    width: 50%;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.property-div, .absence{
+	padding: 40px;
+}
+.person{
+	border: 1px solid red;
+	padding: 30px;
+}
+.person_detail{
+	margin-left:60px; 
+}
+.person input[type="text"]{
+	padding: 10px 65px;
+}
+.button button[type="submit"]{
+	position: absolute;
+    border-radius: 0;
+    padding: 11px 20px;
+    background: #4691e3;
+    border: 1px solid #4691e3;
+    color: white;
+}
+.property{
+	padding: 20px 60px;
+}
+
+.property input[type="checkbox"]{
+	margin-top: 20px;
+	font-size: 1em;
+}
+
+.absence-record1, .absence-record2, .absence-record3{
+	border: 1px solid red;
+	padding: 30px;
+	margin-bottom: 26px;
+    text-align: center;
+}
