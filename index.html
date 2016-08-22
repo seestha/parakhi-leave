@@ -30,33 +30,18 @@
 
 
 
-<!-- <h1>Sorted Table</h1>
+<h4>Sorted Table</h1>
 <button id="sorting">Sort Table</button>
-<div id="here_table"></div>
+<div id="list"></div>
 
 	<script type="text/javascript">
 		let names=["Roji", "Saru", "Aarati", "Jeevan"];
-		$(document).ready(function() {
-			// names.sort();
-			var table = $('<table></table>').addClass('foo');
-			for(i=0; i<names.length; i++){
-			    var row = $('<tr></tr>').text(names[i]);
-			    table.append(row);
-			}
+		document.getElementById("list").innerHTML = names;
 
-			$('#here_table').append(table);
-
-		});
 		$('#sorting').click(function() {
 			names.sort();
-			var table = $('<table></table>').addClass('foo');
-			for(i=0; i<names.length; i++){
-			    var row = $('<tr></tr>').text(names[i]);
-			    table.append(row);
-			}
-
-			$('#here_table').append(table);
+    		document.getElementById("list").innerHTML = names;
 		});
-	</script> -->
+	</script>
 </body>
 </html>
