@@ -1,0 +1,49 @@
+{
+   "data":[
+      {
+         "type":"absences",
+         "id":"57cc72fb41c6bb2e4edb5120",
+         "attributes":{
+            "name":"Roji Maharjan",
+            "properties":[
+               {
+                  "category":"startDate",
+                  "name":"Fri Mar 25 2016 00:00:00 GMT+0545 (NPT)",
+                  "_id":"57cc72fb41c6bb2e4edb5122"
+               },
+               {
+                  "category":"end Date",
+                  "name":"Wed Mar 30 2016 00:00:00 GMT+0545 (NPT)",
+                  "_id":"57cc72fb41c6bb2e4edb5121"
+               }
+            ]
+         },
+         "relationships":{
+            "similarities":{
+               "data":[
+                  {
+                     "type":"similarities",
+                     "id":"HpEqx6ornrJuJpr1wJo6vvqxDK68KMuvJsunxs46"
+                  }
+               ]
+            }
+         }
+      }
+   ],
+   "included":[
+      {
+         "type":"similarities",
+         "id":"HpEqx6ornrJuJpr1wJo6vvqxDK68KMuvJsunxs46",
+         "attributes":{
+            "path":"startDate",
+            "entities":[
+               "Arjun Yonjan",
+               "Arjun Yonjan",
+               "Suman Kumar",
+               "Roji Maharjan",
+               "Ajay Shresta"
+            ]
+         }
+      }
+   ]
+}

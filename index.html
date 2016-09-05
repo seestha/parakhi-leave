@@ -10,7 +10,7 @@
 	<div class="property-div">
 		<div class="person">
 			<div class="person_detail">
-				<input type="text" class="">
+				<input type="text" class="" id="textName">
 				<span class="button">
 					<button type="submit">Go</button>
 				</span><br>
@@ -37,20 +37,6 @@
 </div> <!-- end of outer-div -->
 
 
-<h4>Sorted Table</h1>
-<button id="sorting">Sort Table</button>
-<div id="list"></div>
-
-	<script type="text/javascript">
-		var names=["Roji", "Saru", "Aarati", "Jeevan"];
-		document.getElementById("list").innerHTML = names;
-
-		$('#sorting').click(function() {
-			names.sort();
-    		document.getElementById("list").innerHTML = names;
-		});
-	</script>
-
 	<!-- sorting with jquery -->
 	<button id="sorting-data">Sort List</button>
 	<div id="sort-data"></div>
@@ -64,6 +50,19 @@
 				names.sort();
 				$('#sort-data').text(names);
 			});
+
+			// var xmlhttp = new XMLHttpRequest();
+			var url = "parakhi-leave-data.json";
+
+			var xhttp = new XMLHttpRequest();
+		    xhttp.onreadystatechange = function() {
+		        if (this.readyState == 4 && this.status == 200) {
+		        	console.log("response text ==>", this.responseText);
+		        	var myData = JSON.parse(this.responseText);
+		        }
+		    };
+		    xhttp.open("GET", url, true);
+		    xhttp.send();
 		</script>
 </body>
 </html>
