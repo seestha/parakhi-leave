@@ -10,28 +10,22 @@
 	<div class="property-div">
 		<div class="person">
 			<div class="person_detail">
-				<input type="text" class="" id="textName">
+				<input type="" class="" id="textName" value=''>
 				<span class="button">
 					<button type="submit">Go</button>
 				</span><br>
 			</div>
 			<div class="property">
-			<input type="checkbox">Property1</input><br>
+			<!-- <input type="checkbox">Property1</input><br>
 			<input type="checkbox">Property2</input><br>
-			<input type="checkbox">Property3</input><br>
+			<input type="checkbox">Property3</input><br> -->
 			</div>
 		</div>
 	</div> <!-- end of property-div -->
 	<div class="absence">
 		<div class="absence-record1">
-			<label>absence record 1</label>
-		</div> <!-- end of absence-record1 -->
-		<div class="absence-record2">
-			<label>absence record 2</label>
-		</div> <!-- end of absence-record2 -->
-		<div class="absence-record3">
-			<label>absence record 3</label>
-		</div> <!-- end of absence-record3 -->
+			<label></label>
+		</div> <!-- end of absence-record -->
 	</div><!--end of absence-->
 
 </div> <!-- end of outer-div -->
@@ -57,8 +51,19 @@
 			var xhttp = new XMLHttpRequest();
 		    xhttp.onreadystatechange = function() {
 		        if (this.readyState == 4 && this.status == 200) {
-		        	console.log("response text ==>", this.responseText);
 		        	var myData = JSON.parse(this.responseText);
+		        	debugger;
+		        	console.log(myData.data[0].attributes.name, 'properties');
+		        	$('#textName').val(myData.data[0].attributes.name);
+		        	let propertList = myData.data[0].attributes.properties;
+		        	propertList.forEach(function(property){
+		        		$('.property').append('<input type="checkbox">'+property.category+'</input><br>')
+		        	});
+		        	let absentRecord = myData.included[0].attributes.entities;
+		        	absentRecord.forEach(function(absent){
+		        		$('.absence').append('<div class="absence-record1"><label>'+absent+'</label></div>')
+		        	})
+
 		        }
 		    };
 		    xhttp.open("GET", url, true);
