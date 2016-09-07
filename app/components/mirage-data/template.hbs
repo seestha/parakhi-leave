@@ -1,0 +1,28 @@
+	<h3>Parakhi Leave</h3>
+	<div class="outer-div">
+	<div class="property-div">
+
+		<div class="person">
+			<div class="person_detail">
+				<input type="" class="" id="textName" value=''>
+				<span class="button">
+					<button type="submit">Search</button>
+				</span><br>
+			</div>
+			<div class="property">
+
+			<!-- <input type="checkbox">Property1<br>
+			<input type="checkbox">Property2<br> -->
+			<!-- <input type="checkbox">Property3<br> -->
+
+			</div>
+		</div>
+	</div> <!-- end of property-div -->
+
+	{{#each data.data as |absentrecord|}}
+		<div class="absence person">
+			{{absentrecord.attributes.title}}
+		</div><!--end of absence-->
+	{{/each}}
+
+</div> <!-- end of outer-div -->
