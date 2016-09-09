@@ -4,12 +4,15 @@
 
 		<div class="person">
 			<div class="person_detail">
-				<input type="" class="" id="textName" value=''>
+				{{input type="" class="" id="textName" placeholder="Enter Name" value=keyword}}
 				<span class="button">
-					<button type="submit">Search</button>
+					<button type="submit" {{action 'searchEmployee'}}>Search</button>
 				</span><br>
 			</div>
 			<div class="property">
+				<!-- {{#each absenceRecord.data as |absence|}}
+					<input type="checkbox">absence.attributes.start-date<br>
+				{{/each}} -->
 
 			<!-- <input type="checkbox">Property1<br>
 			<input type="checkbox">Property2<br> -->
@@ -18,10 +21,9 @@
 			</div>
 		</div>
 	</div> <!-- end of property-div -->
-
-	{{#each data.data as |absentrecord|}}
+	{{#each data.data as |employee|}}
 		<div class="absence person">
-			{{absentrecord.attributes.title}}
+			{{employee.attributes.name}}
 		</div><!--end of absence-->
 	{{/each}}
 

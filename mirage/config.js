@@ -25,13 +25,14 @@ export default function() {
   */
   this.namespace = 'api';
 
-  this.get('/absentRecords');
-  this.get('/absentRecords/:id');
+  this.get('/employees');
+  this.get('/employees/:id');
 
-  this.get('/absentRecords/:id/absentPersons', function(schema, request) {
-    const absentRecordId = request.params.id;
-    return schema.absentPersons.where({ absentRecordId: absentRecordId });
+  this.get('/employees/:id/absences', function(schema, request) {
+    const employeeId = request.params.id;
+    return schema.absences.where({ employeeId: employeeId });
   });
+  this.get('/absences/');
+  this.get('/absences/:id');
 
-  this.post('/absentPersons');
 }

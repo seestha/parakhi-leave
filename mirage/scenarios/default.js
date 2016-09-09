@@ -8,7 +8,6 @@ export default function( server) {
   */
 
   //generate 10 absent records
-  server.createList('absentRecord', 10);
-  server.loadFixtures('absentPersons');
-  server.create('absentPersons', { absentRecordId: 5 });
+  server.createList('employee', 10);
+  server.createList('absence', 10);
 }
