@@ -32,7 +32,9 @@ export default function() {
     const employeeId = request.params.id;
     return schema.absences.where({ employeeId: employeeId });
   });
-  this.get('/absences/');
+  this.get('/absences', schema => {
+    return schema.absences.all();
+  });
   this.get('/absences/:name', function(schema, request) {
     // console.log(" req.==>", request.params);
 
