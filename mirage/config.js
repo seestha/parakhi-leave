@@ -33,6 +33,23 @@ export default function() {
     return schema.absences.where({ employeeId: employeeId });
   });
   this.get('/absences/');
-  this.get('/absences/:id');
+  this.get('/absences/:name', function(schema, request) {
+    // console.log(" req.==>", request.params);
+
+    const employeeName = request.params.name;
+    let records = schema.employees.where({name:employeeName});
+    let recordId = records.models[0].id;
+    if (recordId) {
+        let abscenceRecordList = schema.absences.find(recordId);
+        console.log("senario ",abscenceRecordList.employee.absences.models);
+        return abscenceRecordList;
+          // return abscenceRecordList.models[0];
+        }
+        // console.log("users first", allUsers);
+    // let users = schema.absences.find(1);
+    // console.log("users");
+    // console.log('res',  schema.absences.where({ employee.name : employeeName }))
+    // return schema.absences.where({ employee.name : employeeName });
+  });
 
 }

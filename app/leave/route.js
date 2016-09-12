@@ -1,31 +1,31 @@
 import Ember from 'ember';
 
-// const { RSVP, $ } = Ember;
+const { RSVP, $ } = Ember;
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('md-absence');
-    // return RSVP.hash({
-    //   employees: $.getJSON('/api/employees'),
-    //   absences: $.getJSON('/api/absences/?id=1')
-    // });
+    // return this.store.findAll('md-absence');
+    return RSVP.hash({
+      employees: this.store.findAll('md-employee'),
+      absences: this.store.findAll('md-absence')
+    });
   },
   setupController: function(controller, model) {
     this._super.apply(this, arguments);
+    // controller.set('absentRecords',model.absences);
   },
   actions:{
-  //   search:function(keyword){
-  //     console.log('keyword',keyword);
-  //     $.ajax({
-  //           url:"/api/absences/?name="+keyword,
-  //           type: "GET",
-  //           contentType: "application/json",
-  //           dataType:"json",
-  //       }).done(function(response) {
-  //         console.log('response',response);
-  //       });
-
-  //     console.log('employee',employee);
-  //   }
+    search:function(keyword){
+      var controller = this.controller;
+      $.ajax({
+            url:"/api/absences/"+keyword,
+            type: "GET",
+            contentType: "application/json",
+            dataType:"json",
+        }).done(function(response) {
+          console.log('response',response);
+          controller.set('absentRecords',response);
+        });
+    }
   }
 });
