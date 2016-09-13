@@ -21,10 +21,22 @@
 			</div>
 		</div>
 	</div> <!-- end of property-div -->
-	{{#each data.data as |employee|}}
-		<div class="absence person">
-			{{employee.attributes.start-date}}
-		</div><!--end of absence-->
-	{{/each}}
+		<table>
+	  <tr>
+			{{#each categoryList as |getproperty as index|}}
+				<th>{{getproperty}}</th>
+			{{/each}}
+	  </tr>
+
+		{{#each data.data as |employee|}}
+					<tr>
+					{{#each employee.attributes.properties as |data|}}
+						<td>{{data.name}}</td>
+					{{/each}}
+				</tr>
+			{{else}}
+				<span>No records found</span>
+		{{/each}}
+	</table>
 
 </div> <!-- end of outer-div -->

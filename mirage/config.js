@@ -39,8 +39,8 @@ export default function() {
   this.get('/absences/:name', function(schema, request) {
     // console.log(" req.==>", request.params);
 
-    const employeeName = request.params.name;
-    return schema.absences.all();
+    const name = request.params.name;
+    return schema.absences.where({employeeName : name});
   });
   // this.get('/absences/:name', function(schema, request) {
   //   // console.log(" req.==>", request.params);
