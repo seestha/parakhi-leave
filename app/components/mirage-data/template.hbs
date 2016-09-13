@@ -10,9 +10,9 @@
 				</span><br>
 			</div>
 			<div class="property">
-				<!-- {{#each absenceRecord.data as |absence|}}
-					<input type="checkbox">absence.attributes.start-date<br>
-				{{/each}} -->
+				{{#each categoryList as |getproperty as index|}}
+					<input type="checkbox">{{getproperty}}<br>
+				{{/each}}
 
 			<!-- <input type="checkbox">Property1<br>
 			<input type="checkbox">Property2<br> -->

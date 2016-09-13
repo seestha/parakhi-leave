@@ -7,13 +7,14 @@ export default Ember.Route.extend({
     // return this.store.findAll('md-absence');
     return RSVP.hash({
       employees: this.store.findAll('md-employee'),
-      absences: this.store.findAll('md-absence')
+      absences: this.store.findAll('md-absence'),
+      similarities: this.store.findAll('md-similarity')
     });
   },
   setupController: function(controller, model) {
     this._super.apply(this, arguments);
     // controller.set('absentRecords',model.absences);
-    debugger;
+    // debugger;
   },
   actions:{
     search:function(keyword){

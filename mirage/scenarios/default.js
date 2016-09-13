@@ -10,4 +10,5 @@ export default function( server) {
   //generate 10 absent records
   server.createList('employee', 10);
   server.createList('absence', 10);
+  server.createList('similarity',10);
 }
